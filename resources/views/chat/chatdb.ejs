@@ -32,31 +32,17 @@
                         id="username" type="text" placeholder="Enter username..." required/>
                 </div>
                 <div class="mb-1 pt-1 rounded bg-transperent">
-                    
-                    <ui name="room" id="room" class="px-2 list-none">
-                        <label for="room" class="block text-black text-xl font-bold mb-2">
-                            Room
-                        </label>
-
-                        <a href="">
-                            <li value="JavaScript" class="my-1 bg-red-100 rounded w-full text-gray-700 text-center border-b-4 border-red-300 hover:bg-red-200 transition duration-200">JavaScript</li>
-                        </a>
-                        <a href="">
-                            <li value="Python" class="my-1 bg-red-100 rounded w-full text-gray-700 text-center border-b-4 border-red-300 hover:bg-red-200 transition duration-200">Python</li>
-                        </a>
-                        <a href="">
-                            <li value="PHP" class="my-1 bg-red-100 rounded w-full text-gray-700 text-center border-b-4 border-red-300 hover:bg-red-200 transition duration-200">PHP</li>
-                        </a>
-                        <a href="">
-                            <li value="C#" class="my-1 bg-red-100 rounded w-full text-gray-700 text-center border-b-4 border-red-300 hover:bg-red-200 transition duration-200">C#</li>
-                        </a>
-                        <a href="">
-                            <li value="Ruby" class="my-1 bg-red-100 rounded w-full text-gray-700 text-center border-b-4 border-red-300 hover:bg-red-200 transition duration-200">Ruby</li>
-                        </a>
-                        <a href="">
-                            <li value="Java" class="my-1 bg-red-100 rounded w-full text-gray-700 text-center border-b-4 border-red-300 hover:bg-red-200 transition duration-200">Java</li>
-                        </a>
-                    </ul>
+                    <label for="room" class="block text-black text-xl font-bold mb-2">
+                        Room
+                    </label>
+                    <select name="room" id="room" class="px-3 py-1 bg-red-100 rounded w-full text-gray-700 border-b-4 border-red-300 hover:bg-red-200 focus:outline-none focus:border-red-500 focus:bg-red-200 transition duration-200">
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Python">Python</option>
+                        <option value="PHP">PHP</option>
+                        <option value="C#">C#</option>
+                        <option value="Ruby">Ruby</option>
+                        <option value="Java">Java</option>
+                    </select>
                 </div>
                 <div class="flex justify-center mt-4">
                     <button type="submit"

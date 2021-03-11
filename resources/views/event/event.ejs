@@ -1,28 +1,31 @@
-<section class="flex justify-end mt-4 mr-8">
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-full">
+<body class="bg-gray-300 min-h-screen py-6 md:py-5 px-2 md:px-0" style="font-family:'Lato',sans-serif;">
+  <section class="flex justify-end mt-4 mr-8">
+    <button class="w-auto bg-red-600 text-white text-xl font-bold py-2 px-4 rounded-full shadow-lg hover:bg-red-500 hover:shadow-xl transition duration-200">
      <a onclick="document.getElementById('logout').submit()" href="/">Logout</a>
     </button>
   </section>
 
-<section class="flex justify-center text-4xl mt-10"><h1>Event DashBoard</h1></section>
+  <section class="flex justify-center mt-4">
+    <h1 class="text-4xl font-bold text-red-600 text-center">Event DashBoard</h1>
+  </section>
 
 
-<% for(var i=0; i<hi.length; i++) {%>
-<section class="flex justify-center -mb-10 mt-10 ml-10">
-<div class="max-w-sm rounded overflow-hidden shadow-lg">
-  <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2"><%= hi[i].title %></div>
-    <p class="text-gray-700 text-base">
-      <%= hi[i].description %>
-    </p>
-  </div>
-  <div class="px-6 pt-4 pb-2">
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Location: <%= hi[i].location %></span>
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">TIme: <%= hi[i].time %></span>
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Priceh: <%= hi[i].price %></span>
-  </div>
-</div>
-<% } %>
+  <% for(var i=0; i<hi.length; i++) {%>
+  <section class="flex justify-center m-10">
+    <div class="bg-white max-w-sm mx-auto my-4 rounded-2xl shadow-2xl">
+      <div class="px-6 pt-4">
+        <div class="font-bold text-xl mb-2 uppercase"><%= hi[i].title %></div>
+        <p class="px-3 py-1 w-full text-gray-700 text-xl">
+          <%= hi[i].description %>
+        </p>
+      </div>
+      <div class="px-6 py-4">
+        <span class="inline-block my-1 px-3 py-1 bg-red-100 rounded w-full text-gray-700 border-b-4 border-red-300">Location: <%= hi[i].location %></span>
+        <span class="inline-block my-1 px-3 py-1 bg-red-100 rounded w-full text-gray-700 border-b-4 border-red-300">TIme: <%= hi[i].time %></span>
+        <span class="inline-block my-1 px-3 py-1 bg-red-100 rounded w-full text-gray-700 border-b-4 border-red-300">Priceh: <%= hi[i].price %></span>
+      </div>
+    </div>
+  </section>
+  <% } %>
+</body>
 
-
-</section>
