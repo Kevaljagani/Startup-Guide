@@ -136,9 +136,7 @@ http://www.templatemo.com/tm-515-eatery
     letter-spacing: 2px;
 }
 
-  .search-bar :placeholder{
-        color: yellow;
-  }
+
 
   .about-image img,
   .team-thumb img {
@@ -605,8 +603,4 @@ http://www.templatemo.com/tm-515-eatery
     .menu-thumb .menu-info {
       top: 60%;
     }
-  }
-  ::placeholder{
-    letter-spacing: 2px;
-    font-size: 20px;
   }

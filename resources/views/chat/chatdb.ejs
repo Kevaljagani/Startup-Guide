@@ -10,62 +10,90 @@
         integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
         crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index-style.css">
     <title>ChatCord App</title>
 </head>
-<body class="bg-gray-300 min-h-screen py-6 md:py-5 px-2 md:px-0 overflow-y-auto" style="font-family:'Lato',sans-serif;">
-    <main class="bg-white max-w-sm mx-auto p-8 md:p-12 my-4 rounded-2xl shadow-2xl">
-        <header class="max-w-lg mx-auto">
-            <h1 class=" text-3xl font-bold text-red-600 text-center">
-                <i class="fas fa-smile"></i> ChatCord
-            </h1>
-            <p class="text-3xl font-bold text-red-600 text-center">Welcome</p>
-        </header>
-        <section class="mt-10">
-            <form action="chat.html" class="w-full flex flex-col">
-                <div class="mb-1 pt-1 rounded bg-transperent">
-                    <label class="block text-black text-xl font-bold mb-2" for="username">
-                        Username
-                    </label>
-                    <input name="username"
-                        class="px-3 py-1 bg-red-100 rounded w-full text-gray-700 border-b-4 border-red-300 hover:bg-red-200 focus:outline-none focus:border-red-500 focus:bg-red-200 transition duration-200"
-                        id="username" type="text" placeholder="Enter username..." required/>
-                </div>
-                <div class="mb-1 pt-1 rounded bg-transperent">
-                    
-                    <ui name="room" id="room" class="px-2 list-none">
-                        <label for="room" class="block text-black text-xl font-bold mb-2">
-                            Room
-                        </label>
-
-                        <a href="">
-                            <li value="JavaScript" class="my-1 bg-red-100 rounded w-full text-gray-700 text-center border-b-4 border-red-300 hover:bg-red-200 transition duration-200">JavaScript</li>
-                        </a>
-                        <a href="">
-                            <li value="Python" class="my-1 bg-red-100 rounded w-full text-gray-700 text-center border-b-4 border-red-300 hover:bg-red-200 transition duration-200">Python</li>
-                        </a>
-                        <a href="">
-                            <li value="PHP" class="my-1 bg-red-100 rounded w-full text-gray-700 text-center border-b-4 border-red-300 hover:bg-red-200 transition duration-200">PHP</li>
-                        </a>
-                        <a href="">
-                            <li value="C#" class="my-1 bg-red-100 rounded w-full text-gray-700 text-center border-b-4 border-red-300 hover:bg-red-200 transition duration-200">C#</li>
-                        </a>
-                        <a href="">
-                            <li value="Ruby" class="my-1 bg-red-100 rounded w-full text-gray-700 text-center border-b-4 border-red-300 hover:bg-red-200 transition duration-200">Ruby</li>
-                        </a>
-                        <a href="">
-                            <li value="Java" class="my-1 bg-red-100 rounded w-full text-gray-700 text-center border-b-4 border-red-300 hover:bg-red-200 transition duration-200">Java</li>
-                        </a>
-                    </ul>
-                </div>
-                <div class="flex justify-center mt-4">
-                    <button type="submit"
-                        class="w-full bg-red-600 text-white text-xl font-bold p-2 rounded-full shadow-lg hover:bg-red-500 hover:shadow-xl transition duration-200">
-                        Join Chat
+<body class="bg-gray-300">
+        <section class="navbar custom-navbar navbar-fixed-top top-nav-collapse" role="navigation">
+            <div class="container">
+        
+                <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon icon-bar"></span>
+                        <span class="icon icon-bar"></span>
+                        <span class="icon icon-bar"></span>
                     </button>
+    
+                    <!-- lOGO TEXT HERE -->
+                    <a href="index.html" class="navbar-brand">Startup Guide</a>
                 </div>
-            </form>
+    
+                <!-- MENU LINKS -->
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-nav-first">
+                        <li><a href="#" class="smoothScroll">Sent Messages</a></li>
+                        <li><a href="#" class="smoothScroll">Request Blog</a></li>
+                        <li><a href="mentor_profile.html" class="smoothScroll">Blogs</a></li>
+                        <li><a href="#" class="smoothScroll">Events</a></li>
+                        <li><a href="#" class="smoothScroll">Community Chat</a></li>
+                        <li><a href="general-login.html" class="smoothScroll" style="font-size: 15px;">Log out</a></li>
+                    </ul>
+    
+                    <!--- <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Call Now! <i class="fa fa-phone"></i> 010 020 0340</a></li>
+                        <a href="#footer" class="section-btn">Gover</a>
+                    </ul>-->
+                </div>
+        
+            </div>
         </section>
-    </main>
+        <section>
+            <div class="bg-white max-w-lg mx-auto p-8 md:p-12 my-4 rounded-2xl shadow-2xl">
+                <div class="max-w-lg mx-auto">
+                    <h1 class="m-0 text-3xl font-bold text-red-600 text-center">
+                        <i class="fas fa-smile"></i> ChatCord
+                    </h1>
+                    <p class="m-0 text-3xl font-bold text-red-600 text-center">Welcome</p>
+                </div>
+                <div class="mt-10">
+                    <form action="chat.html" class="w-full flex flex-col">
+                        <div class="mb-1 pt-1 rounded bg-transperent">
+                            <label class="block text-black text-2xl font-bold mb-2" for="username">
+                                Username
+                            </label>
+                            <input name="username"
+                                class="px-3 py-1 bg-red-100 rounded w-full text-gray-700 border-b-4 border-red-300 hover:bg-red-200 focus:outline-none focus:border-red-500 focus:bg-red-200 transition duration-200"
+                                id="username" type="text" placeholder="Enter username..." required/>
+                        </div>
+                        <div class="mb-1 pt-1 rounded bg-transperent">
+                            <label for="room" class="block text-black text-2xl font-bold mb-2">
+                                Room
+                            </label>
+                            <select name="room" id="room" class="my-1 bg-red-100 rounded w-full text-gray-700 text-center border-b-4 border-red-300 transition duration-200">
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="Python">Python</option>
+                                <option value="PHP">PHP</option>
+                                <option value="C#">C#</option>
+                                <option value="Ruby">Ruby</option>
+                                <option value="Java">Java</option>
+                            </select>
+                        </div>
+                        <div class="flex justify-center mt-4">
+                            <button type="submit"
+                                class="w-full bg-red-600 text-white text-2xl font-bold p-2 rounded-full shadow-lg hover:bg-red-500 hover:shadow-xl transition duration-200">
+                                Join Chat
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+
+    <!-- SCRIPTS -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
