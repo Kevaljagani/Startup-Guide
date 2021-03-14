@@ -1,51 +1,99 @@
-<section class="flex justify-center text-4xl mt-10"><h1>Recruiter DashBoard</h1></section>
-<section class="flex justify-center pt-24">
-<form action="/eventpost" method="POST" class="w-full max-w-lg content-center">
-  <div class="flex flex-wrap -mx-3 mb-6">
-    <div class="w-full px-3">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-        Event Title
-      </label>
-      <input name="title" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="Event Title">
- 
-    </div>
-  </div>
-  <div class="flex flex-wrap -mx-3 mb-6">
-    <div class="w-full px-3">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-        Eent Description
-      </label>
-      <input name="description" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="email" placeholder="Event-Description">
-    </div>
-  </div>
-  <div class="flex flex-wrap -mx-3 mb-2">
-    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-        Location
-      </label>
-      <input name="location" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Location">
-    </div>
-    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-        Time
-      </label>
-      <input name="time" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Time">
-    </div>
-    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-        Price
-      </label>
-      <input name="price" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Price">
+<head>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index-style.css">
+</head>
+<body class="bg-gray-300">
+  <section class="navbar custom-navbar navbar-fixed-top top-nav-collapse" role="navigation">
+    <div class="container">
 
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded-full mt-12" type="submit">
-  			Create_Event
-			</button>
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded-full mt-12">
-       <a href="/userdashboard">List_all_events</a>
-      </button>
+         <div class="navbar-header">
+              <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                   <span class="icon icon-bar"></span>
+                   <span class="icon icon-bar"></span>
+                   <span class="icon icon-bar"></span>
+              </button>
+
+              <!-- lOGO TEXT HERE -->
+              <a href="index.html" class="navbar-brand">Startup Guide</a>
+         </div>
+
+         <!-- MENU LINKS -->
+         <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-nav-first">
+                   <li><a href="#" class="smoothScroll">Sent Messages</a></li>
+                   <li><a href="#" class="smoothScroll">Request Blog</a></li>
+                   <li><a href="mentor_profile.html" class="smoothScroll">Blogs</a></li>
+                   <li><a href="#" class="smoothScroll">Events</a></li>
+                   <li><a href="#" class="smoothScroll">Community Chat</a></li>
+                   <li><a href="general-login.html" class="smoothScroll" style="font-size: 15px;">Log out</a></li>
+              </ul>
+
+             <!--- <ul class="nav navbar-nav navbar-right">
+                   <li><a href="#">Call Now! <i class="fa fa-phone"></i> 010 020 0340</a></li>
+                   <a href="#footer" class="section-btn">Gover</a>
+              </ul>-->
+         </div>
 
     </div>
+  </section>
 
-  </div>
+  <section>
+    <div class="bg-white max-w-2xl mx-auto p-8 md:p-12 my-4 rounded-2xl shadow-2xl">
+      <div class="max-w-lg mx-auto">
+        <h1 class="m-0 text-4xl font-bold text-red-600 text-center">Recruiter DashBoard</h1>
+      </div>
+      <div class="mt-10">
+        <form action="/eventpost" method="POST" class="flex flex-col">
+          <div class="my-1 py-1 rounded bg-transperent">
+              <label class="block text-black text-2xl font-bold mb-2">
+                Event Title
+              </label>
+              <input name="title" class="px-3 py-1 bg-red-100 rounded w-full text-gray-700 border-b-4 border-red-300 hover:bg-red-200 focus:outline-none focus:border-red-500 focus:bg-red-200 transition duration-200" type="text" placeholder="Event Title">
+          </div>
+          <div class="my-1 py-1 rounded bg-transperent">
+              <label class="block text-black text-2xl font-bold mb-2">
+                Eent Description
+              </label>
+              <input name="description" class="px-3 py-1 bg-red-100 rounded w-full text-gray-700 border-b-4 border-red-300 hover:bg-red-200 focus:outline-none focus:border-red-500 focus:bg-red-200 transition duration-200" type="email" placeholder="Event-Description">
+          </div>
+          <div class="my-1 py-1 rounded bg-transperent flex flex-wrap">
+            <div class="w-full md:w-1/3 mb-6 md:mb-0">
+              <label class="block text-black text-2xl font-bold mb-2">
+                Location
+              </label>
+              <input name="location" class="px-3 py-1 bg-red-100 rounded w-full text-gray-700 border-b-4 border-red-300 hover:bg-red-200 focus:outline-none focus:border-red-500 focus:bg-red-200 transition duration-200" type="text" placeholder="Location">
+            </div>
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+              <label class="block text-black text-2xl font-bold mb-2">
+                Time
+              </label>
+              <input name="time" class="px-3 py-1 bg-red-100 rounded w-full text-gray-700 border-b-4 border-red-300 hover:bg-red-200 focus:outline-none focus:border-red-500 focus:bg-red-200 transition duration-200" type="text" placeholder="Time">
+            </div>
+            <div class="w-full md:w-1/3 mb-6 md:mb-0">
+              <label class="block text-black text-2xl font-bold mb-2">
+                Price
+              </label>
+              <input name="price" class="px-3 py-1 bg-red-100 rounded w-full text-gray-700 border-b-4 border-red-300 hover:bg-red-200 focus:outline-none focus:border-red-500 focus:bg-red-200 transition duration-200" type="text" placeholder="Price">
+            </div>
+          </div>
+          <div class="mb-1 pt-1 rounded bg-transperent">
+            <div class="flex justify-end my-4">
+              <button class="w-48 bg-red-600 text-white text-xl font-bold px-4 py-2 rounded-full shadow-lg hover:bg-red-500 hover:shadow-xl transition duration-200" type="submit">
+                Create_Event
+              </button>
+            </div>
+            <div class="flex justify-end my-4">
+              <button class="w-48 bg-red-600 text-white text-xl font-bold px-4 py-2 rounded-full shadow-lg hover:bg-red-500 hover:shadow-xl transition duration-200">
+                <a href="/userdashboard" class="text-white font-bold hover:text-white">List_all_events</a>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
 
-</form>
+  <!-- SCRIPTS -->
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>

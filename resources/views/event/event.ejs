@@ -1,28 +1,69 @@
-<section class="flex justify-end mt-4 mr-8">
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-full">
-     <a onclick="document.getElementById('logout').submit()" href="/">Logout</a>
-    </button>
+<head>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index-style.css">
+</head>
+<body class="bg-gray-300">
+  <section class="navbar custom-navbar navbar-fixed-top top-nav-collapse" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+              <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="icon icon-bar"></span>
+                  <span class="icon icon-bar"></span>
+                  <span class="icon icon-bar"></span>
+              </button>
+
+              <!-- lOGO TEXT HERE -->
+              <a href="index.html" class="navbar-brand">Startup Guide</a>
+        </div>
+
+        <!-- MENU LINKS -->
+        <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-nav-first">
+                  <li><a href="#" class="smoothScroll">Sent Messages</a></li>
+                  <li><a href="#" class="smoothScroll">Request Blog</a></li>
+                  <li><a href="mentor_profile.html" class="smoothScroll">Blogs</a></li>
+                  <li><a href="#" class="smoothScroll">Events</a></li>
+                  <li><a href="#" class="smoothScroll">Community Chat</a></li>
+                  <li><a href="general-login.html" class="smoothScroll" style="font-size: 15px;">Log out</a></li>
+              </ul>
+
+            <!--- <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#">Call Now! <i class="fa fa-phone"></i> 010 020 0340</a></li>
+                  <a href="#footer" class="section-btn">Gover</a>
+              </ul>-->
+        </div>
+
+    </div>
+  </section>
+  <section class="flex justify-end mt-4 mr-8">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-full">
+      <a onclick="document.getElementById('logout').submit()" href="/">Logout</a>
+      </button>
   </section>
 
-<section class="flex justify-center text-4xl mt-10"><h1>Event DashBoard</h1></section>
+  <section class="flex justify-center text-4xl mt-10"><h1 class="m-0 text-4xl text-center">Event DashBoard</h1></section>
 
 
-<% for(var i=0; i<hi.length; i++) {%>
-<section class="flex justify-center -mb-10 mt-10 ml-10">
-<div class="max-w-sm rounded overflow-hidden shadow-lg">
-  <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2"><%= hi[i].title %></div>
-    <p class="text-gray-700 text-base">
-      <%= hi[i].description %>
-    </p>
-  </div>
-  <div class="px-6 pt-4 pb-2">
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Location: <%= hi[i].location %></span>
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">TIme: <%= hi[i].time %></span>
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Priceh: <%= hi[i].price %></span>
-  </div>
-</div>
-<% } %>
+  <% for(var i=0; i<hi.length; i++) {%>
+  <section class="flex justify-center -mb-10 mt-10 ml-10">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2"><%= hi[i].title %></div>
+        <p class="text-gray-700 text-base">
+          <%= hi[i].description %>
+        </p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Location: <%= hi[i].location %></span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">TIme: <%= hi[i].time %></span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Priceh: <%= hi[i].price %></span>
+      </div>
+    </div>
+  </section>
+  <% } %>
 
-
-</section>
+  <!-- SCRIPTS -->
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
