@@ -1,69 +1,80 @@
-<head>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/index-style.css">
-</head>
-<body class="bg-gray-300">
-  <section class="navbar custom-navbar navbar-fixed-top top-nav-collapse" role="navigation">
-    <div class="container">
 
-        <div class="navbar-header">
-              <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                  <span class="icon icon-bar"></span>
-                  <span class="icon icon-bar"></span>
-                  <span class="icon icon-bar"></span>
-              </button>
+<!-- This example requires Tailwind CSS v2.0+ -->
+<nav class="bg-gray-800">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <!-- Mobile menu button-->
+        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <!--
+            Icon when menu is closed.
 
-              <!-- lOGO TEXT HERE -->
-              <a href="index.html" class="navbar-brand">Startup Guide</a>
-        </div>
+            Heroicon name: outline/menu
 
-        <!-- MENU LINKS -->
-        <div class="collapse navbar-collapse">
-              <ul class="nav navbar-nav navbar-nav-first">
-                  <li><a href="#" class="smoothScroll">Sent Messages</a></li>
-                  <li><a href="#" class="smoothScroll">Request Blog</a></li>
-                  <li><a href="mentor_profile.html" class="smoothScroll">Blogs</a></li>
-                  <li><a href="#" class="smoothScroll">Events</a></li>
-                  <li><a href="#" class="smoothScroll">Community Chat</a></li>
-                  <li><a href="general-login.html" class="smoothScroll" style="font-size: 15px;">Log out</a></li>
-              </ul>
+            Menu open: "hidden", Menu closed: "block"
+          -->
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!--
+            Icon when menu is open.
 
-            <!--- <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#">Call Now! <i class="fa fa-phone"></i> 010 020 0340</a></li>
-                  <a href="#footer" class="section-btn">Gover</a>
-              </ul>-->
-        </div>
+            Heroicon name: outline/x
 
-    </div>
-  </section>
-  <section class="flex justify-end mt-4 mr-8">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-full">
-      <a onclick="document.getElementById('logout').submit()" href="/">Logout</a>
-      </button>
-  </section>
-
-  <section class="flex justify-center text-4xl mt-10"><h1 class="m-0 text-4xl text-center">Event DashBoard</h1></section>
-
-
-  <% for(var i=0; i<hi.length; i++) {%>
-  <section class="flex justify-center -mb-10 mt-10 ml-10">
-    <div class="max-w-sm rounded overflow-hidden shadow-lg">
-      <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2"><%= hi[i].title %></div>
-        <p class="text-gray-700 text-base">
-          <%= hi[i].description %>
-        </p>
+            Menu open: "block", Menu closed: "hidden"
+          -->
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
       </div>
-      <div class="px-6 pt-4 pb-2">
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Location: <%= hi[i].location %></span>
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">TIme: <%= hi[i].time %></span>
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Priceh: <%= hi[i].price %></span>
+      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex-shrink-0 flex items-center">
+          
+        </div>
+        <div class="hidden sm:block sm:ml-6">
+          <div class="flex space-x-4">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="/" class="text-white px-3 py-2 rounded-md text-sm font-medium">STARTUP GUIDE</a>
+            <a href="/event" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Events</a>
+            <a href="/blogs" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blogs</a>
+            <a href="#/send Messages" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sent Messages</a>
+            <a href="/chatdb" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Community Chat</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-end">
+        <a href="/" class="text-gray-300 rounded-full bg-red-600 hover:bg-red-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Log Out</a>
+      </div>
       </div>
     </div>
-  </section>
-  <% } %>
+  </div>
+</nav>
 
-  <!-- SCRIPTS -->
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-</body>
+
+<div class="grid xl:grid-cols-3 col-gap-12 row-gap-16">
+
+<% hi.forEach(function(hi) { %>
+  <div class="rounded-3xl shadow-lg">
+  <div class="w-full mt-10">
+      <div class="text-center items-center">
+          <h2 class="mb-4 text-lg font-bold items-center justify-center "><%= hi.title %></h2>
+          <div class="flex text-justify	text-center items-center size py-1 px-4 rounded-full uppercase text-xs "><p><%= hi.description %></p></div>
+          <div class="flex items-center justify-around mt-6">
+          
+            <div class="px-6 pt-4 pb-2 text-center">
+              <span class="inline-block bg-red-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 hover:bg-red-400"><%= hi.location %></span>
+              <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 hover:bg-gray-400 "><%= hi.time %></span>
+              <span class="inline-block bg-green-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 hover:bg-green-400"><%= hi.date %></span>
+              <span class="inline-block bg-blue-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 hover:bg-blue-400"><%= hi.price %></span>
+
+            </div>
+          </div>
+      </div>
+  </div>
+  </div>
+  <% }) %>
+
+>>>>>>> 59ae7bb (nav bar added)

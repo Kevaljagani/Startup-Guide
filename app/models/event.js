@@ -7,6 +7,7 @@ const eventSchema = new Schema({
   location: { type: String, required: true },
   time: { type: String, required: true },
   price: { type: String },
+  date: { type: String },
 });
 
 module.exports = mongoose.model("Event", eventSchema);

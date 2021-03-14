@@ -243,7 +243,7 @@ http://www.templatemo.com/tm-515-eatery
   }
 
   .custom-navbar .navbar-nav.navbar-nav-first {
-    margin-left: 8em;
+    margin-right: 8em;
   }
 
   .custom-navbar .navbar-nav.navbar-right li a {
@@ -315,6 +315,7 @@ http://www.templatemo.com/tm-515-eatery
     .custom-navbar {
       border-bottom: 0;
       background: 0 0; 
+      
     }
 
     .custom-navbar.top-nav-collapse {

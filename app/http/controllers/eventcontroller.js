@@ -13,7 +13,7 @@ function eventController() {
     postevent(req, res) {
       console.log(req.body);
 
-      const { title, description, location, time, price } = req.body;
+      const { title, description, location, time, price, date } = req.body;
 
       const hello = new Event({
         title,
@@ -21,15 +21,16 @@ function eventController() {
         location,
         time,
         price,
+        date
       });
 
       hello
         .save()
         .then((hello) => {
-          return res.redirect("/");
+          return res.redirect("/event");
         })
         .catch((err) => {
-          return res.redirect("/event");
+          return res.redirect("/error");
         });
     },
   };

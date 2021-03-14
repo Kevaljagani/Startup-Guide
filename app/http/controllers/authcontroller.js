@@ -12,6 +12,7 @@ function authController() {
   return {
     login(req, res) {
       res.render("auth/login");
+      
     },
 
     async postLogin(req, res, next) {
