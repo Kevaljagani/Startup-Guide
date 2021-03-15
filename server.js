@@ -14,6 +14,9 @@ const http = require("http");
 const session = require("express-session");
 const MongoDbStore = require("connect-mongo")(session);
 const bodyParser = require("body-parser");
+const serveIndex = require('serve-index')
+upload = require("express-fileupload");
+
 
 const {
   userJoin,
@@ -44,6 +47,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Express body parser
+
 app.use(express.urlencoded({ extended: true }));
 
 // Session store
@@ -66,6 +70,39 @@ app.use(
 //passport config
 const passportInit = require("./app/config/passport");
 passportInit(passport);
+
+//upload course
+
+app.use(upload({ createParentPath: true }))
+console.log("server started")
+app.get("/addcourse",function(req,res){
+    res.sendFile(__dirname+"/addcourse.html")
+
+})      
+app.post("/",function(req,res){
+    if(req.files){
+        var file = req.files.filename,
+        filename = file.name;
+        file.mv("./upload/"+filename,function(err){
+            if(err){
+                console.log(err)
+                res.send("error occured")
+            }
+            else{
+                res.redirect('/courses')
+            }
+        })
+    }
+})
+
+//view course
+app.use(
+  '/courses',
+  express.static('upload/'),
+  serveIndex('upload/', { icons: true })
+)
+
+//passport config
 app.use(passport.initialize());
 app.use(passport.session());
 

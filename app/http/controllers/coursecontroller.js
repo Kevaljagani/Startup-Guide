@@ -1,7 +1,11 @@
+const express = require('express')
+const serveIndex = require('serve-index')
+
 function courseController() {
   return {
     index(req, res) {
-      res.render("course/course");
+      serveIndex('chat', { icons: true })
+      console.log(req.body)
     },
 
     addcourse(req, res) {
