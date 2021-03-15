@@ -47,8 +47,9 @@ function authController() {
             res.cookie("userData", hello);
             console.log(req.cookies);
             return res.redirect("/sdashboard");
-          } else {
-            return res.render("mdashboard", { user: user });
+          } 
+          else {
+            return res.redirect("/mdashboard");
           }
         });
       })(req, res, next);

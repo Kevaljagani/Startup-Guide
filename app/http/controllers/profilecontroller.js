@@ -6,6 +6,7 @@ function profileController() {
       res.render("profile/editprofile");
     },
     async listofmentors(req, res) {
+      
       const hi = await Profile.find();
 
       const param = req.query;
