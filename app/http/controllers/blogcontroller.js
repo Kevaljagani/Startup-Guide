@@ -14,12 +14,15 @@ function blogController() {
     postblog(req, res) {
       console.log(req.body);
 
-      const { title, description, technology } = req.body;
+      const { title, description, technology, addedby, time, date } = req.body;
 
       const blogobj = new Blog({
         title,
         description,
         technology,
+        addedby,
+        time,
+        date
       });
 
       blogobj
@@ -28,6 +31,7 @@ function blogController() {
           return res.redirect("/");
         })
         .catch((err) => {
+          console.log(err)
           return res.redirect("/error");
         });
     },
