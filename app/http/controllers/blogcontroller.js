@@ -28,7 +28,7 @@ function blogController() {
       blogobj
         .save()
         .then((blogobj) => {
-          return res.redirect("/");
+          return res.redirect("/blogs");
         })
         .catch((err) => {
           console.log(err)
@@ -54,7 +54,7 @@ function blogController() {
       blogobj2
         .save()
         .then((blogobj2) => {
-          return res.redirect("/");
+          return res.redirect("/blogs");
         })
         .catch((err) => {
           return res.redirect("/error");
