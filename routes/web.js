@@ -40,7 +40,7 @@ app.post('/leaveamessage', messageController().postmessage)
 app.get('/inbox', messageController().inbox)
 app.get('/chatwithmentor', messageController().chatwithmentor)
 app.get('/courses', courseController().index)
-app.get('/addcourse', courseController().addcourse)
+//app.get('/addcourse', courseController().addcourse)
 app.get('/*', homeController().error)
 
 
