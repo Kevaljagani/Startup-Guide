@@ -3,6 +3,8 @@ const Profile = require("../../models/profile");
 function profileController() {
   return {
     editprofile(req, res) {
+
+      
       res.render("profile/editprofile");
     },
     async listofmentors(req, res) {
@@ -45,46 +47,57 @@ res.render('/', { a: a })*/
 
       res.render("profile/mentordetails", { hi: hi });
     },
-    temp(req, res) {
-      res.render("profile/temp");
+   async temp(req, res) {
+      const hi = await Profile.find();
+
+      const param = req.query;
+      var LocalStorage = require("node-localstorage").LocalStorage;
+      localStorage = new LocalStorage("./scratch");
+
+      localStorage.setItem("name", JSON.stringify(param));
+
+      res.render("profile/temp", { hi: hi });
+   
     },
 
     postprofile(req, res) {
       console.log(req.body);
 
       const {
-        avatar,
         firstname,
         lastname,
-        description,
+        bintro,
+        dintro,
         city,
         state,
-        zip,
         areaofexpertise,
         contact,
-        accno,
+        email,
+        experience,
+        education
       } = req.body;
 
       const hello = new Profile({
-        avatar,
         firstname,
         lastname,
-        description,
+        bintro,
+        dintro,
         city,
         state,
-        zip,
         areaofexpertise,
         contact,
-        accno,
+        email,
+        experience,
+        education
       });
 
       hello
         .save()
         .then((hello) => {
-          return res.redirect("/");
+          return res.redirect("/mdashboard");
         })
         .catch((err) => {
-          return res.redirect("/editprofile");
+          return res.redirect("/404");
         });
     },
   };

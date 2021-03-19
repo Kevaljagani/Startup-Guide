@@ -7,7 +7,17 @@ function eventController() {
       res.render("event/event", { hi: hi });
     },
     createevent(req, res) {
-      res.render("event/createevent");
+
+      var LocalStorage = require("node-localstorage").LocalStorage;
+      LocalStorage = new LocalStorage("./scratch");
+      const role = LocalStorage.getItem('ab');
+      
+      if (role == '"mentor"') {
+        res.render("event/createevent");
+      }
+      else{
+        res.redirect("/403");
+      }
     },
 
     postevent(req, res) {

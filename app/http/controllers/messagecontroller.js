@@ -5,6 +5,10 @@ function messageController() {
     index(req, res) {
       res.render("message/leaveamessage");
     },
+    async sentmessages(req, res) {
+      const hi = await Message.find();
+      res.render("message/sentmessages", { hi: hi });
+    },
     postmessage(req, res) {
       console.log(req.body);
 
@@ -18,7 +22,7 @@ function messageController() {
       hello
         .save()
         .then((hello) => {
-          return res.redirect("/");
+          return res.redirect("/sdashboard");
         })
         .catch((err) => {
           return res.redirect("/leaveamessage");
@@ -26,8 +30,19 @@ function messageController() {
     },
 
     async inbox(req, res) {
+
       const hi = await Message.find();
-      res.render("message/inbox", { hi: hi });
+var LocalStorage = require("node-localstorage").LocalStorage;
+      LocalStorage = new LocalStorage("./scratch");
+      const role = LocalStorage.getItem('ab');
+      
+      if (role == '"mentor"') {
+         res.render("message/inbox", { hi: hi });
+      }
+      else{
+        res.redirect("/403");
+      }
+     
     },
 
     chatwithmentor(req, res) {

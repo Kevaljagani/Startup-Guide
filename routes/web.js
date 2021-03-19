@@ -40,8 +40,10 @@ app.post('/leaveamessage', messageController().postmessage)
 app.get('/inbox', messageController().inbox)
 app.get('/chatwithmentor', messageController().chatwithmentor)
 app.get('/courses', courseController().index)
-//app.get('/addcourse', courseController().addcourse)
+app.get('/sentmessages', messageController().sentmessages)
+app.get('/403', homeController().forbidden)
 app.get('/*', homeController().error)
+
 
 
 

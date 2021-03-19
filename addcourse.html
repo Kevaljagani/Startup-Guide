@@ -52,7 +52,7 @@
                         <a href="/" class="text-white px-3 py-2 rounded-md text-sm font-medium">STARTUP GUIDE</a>
                         <a href="/event" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Events</a>
                         <a href="/blogs" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blogs</a>
-                        <a href="#/send Messages" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sent Messages</a>
+                        <a href="/courses" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Courses</a>
                         <a href="/chatdb" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Community Chat</a>
                     
                     </div>
@@ -74,20 +74,18 @@
                 </svg>
                 <span class="my-2 text-base leading-normal">Select a file</span>
                 <div class="invisible -mt-8">
+                     <form method="post" enctype="multipart/form-data" action="/">
                     <input type="file" name="filename" class="block">
                 </div>
-                
-            </label>
-        </div>
-        <div class="flex justify-center mb-6">
-            <form method="post" enctype="multipart/form-data" action="/">
                 <div class="flex justify-center mb-6">
                     
                 </div>
-                <div class="flex justify-center mb-6">
-                    <input type="submit" value="upload" class="block text-gray-300 rounded-full bg-red-600 hover:bg-red-400 hover:text-white mb-3 py-2 px-4 w-40 rounded-full">
-                </div>
+                <input type="submit" value="upload" class="block text-gray-300 rounded-full bg-red-600 hover:bg-red-400 hover:text-white mb-3 py-2 px-4 w-40 rounded-full">
             </form>
+            </label>
+        </div>
+        <div class="flex justify-center mb-6">
+   
         </div>
     </section>
 </body>

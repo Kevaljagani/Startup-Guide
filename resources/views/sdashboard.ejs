@@ -39,7 +39,7 @@
               <a href="/" class="text-white px-3 py-2 rounded-md text-sm font-medium">STARTUP GUIDE</a>
               <a href="/event" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Events</a>
               <a href="/blogs" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blogs</a>
-              <a href="#/send Messages" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sent Messages</a>
+              <a href="/courses" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Courses</a>
               <a href="/chatdb" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Community Chat</a>
               
             </div>
@@ -58,23 +58,23 @@
   <div class="grid xl:grid-cols-3 col-gap-12 row-gap-16">
 
 <% for(var i=0; i<hi.length; i++) {%>
-  <div class="bg-white h-56 m-4 rounded-3xl shadow-lg">
+  <div class="bg-white h-auto m-4 rounded-3xl shadow-lg">
   <div class="w-full mt-10">
       <div class="text-center items-center">
           <h2 class="mb-4 text-lg font-bold items-center justify-center ">  <%= hi[i].firstname %>
 </h2>
-          <div class="flex text-justify text-center items-center size py-1 px-4 rounded-full uppercase text-xs "><p><%= hi[i].description %></p></div>
+          <div class="flex text-justify text-center items-center size py-1 px-4 rounded-full uppercase text-xs "><p><%= hi[i].bintro %></p></div>
           <div class="flex items-center justify-around mt-6">
           
             <div class="px-6 pt-4 pb-2 text-center">
               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 hover:bg-gray-400"><%= hi[i].areaofexpertise %></span>
-              <span class="inline-block bg-red-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 hover:bg-red-400"><a href="/mentordetails?name=<%= hi[i].firstname %>&description=<%= hi[i].description %>&zip=<%= hi[i].zip %>">View Full Profile</a></span>
+              <span class="inline-block bg-red-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 hover:bg-red-400"><a href="/temp?name=<%= hi[i].firstname %>&lastname=<%= hi[i].lastname%>&bintro=<%= hi[i].bintro %>&dintro=<%= hi[i].dintro %>&city=<%= hi[i].city%>&state=<%= hi[i].state%>&areaofexpertise=<%= hi[i].areaofexpertise%>&contact=<%= hi[i].contact%>&email=<%= hi[i].email %>&experience=<%= hi[i].experience%>&education=<%= hi[i].education%>&id=<%= hi[i].id%>">View Full Profile</a></span>
             </div>
           </div>
       </div>
   </div>
   </div>
   <% } %>
-
+</div>
 
 

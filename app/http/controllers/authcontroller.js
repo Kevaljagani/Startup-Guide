@@ -4,12 +4,17 @@ const passport = require("passport");
 const session = require("../../../server.js");
 const cookieParser = require("cookie-parser");
 const express = require("express");
+const flash = require("express-flash");
 let app = express();
+
+
 
 app.use(cookieParser);
 
 function authController() {
   return {
+
+
     login(req, res) {
       res.render("auth/login");
       
@@ -19,22 +24,26 @@ function authController() {
       const { email, password } = req.body;
       // Validate request
       if (!email || !password) {
-        //req.flash('error', 'All fields are required')
+        req.flash('error', 'All fields are required')
         return res.redirect("/login");
       }
       passport.authenticate("local", (err, user, info) => {
         if (err) {
-          // req.flash('error', info.message )
+          console.log(err)
+          req.flash('error', info.message )
           return next(err);
+          console.log(err)
         }
         if (!user) {
-          // req.flash('error', info.message )
+          req.flash('error', 'invalid credentials' )
           return res.redirect("/login");
         }
         req.logIn(user, (err) => {
           if (err) {
-            //  req.flash('error', info.message )
+            
+            req.flash('error', info.message )
             return next(err);
+            
           }
 
           const a = user.role;
@@ -46,9 +55,34 @@ function authController() {
             };
             res.cookie("userData", hello);
             console.log(req.cookies);
+
+
+              const param = user.role;
+      const param2 = user.name;
+      var LocalStorage = require("node-localstorage").LocalStorage;
+      localStorage = new LocalStorage("./scratch");
+      const storageItem = JSON.stringify(param)
+      const storageItem2 = JSON.stringify(param2)
+
+      localStorage.setItem("ab", storageItem);
+      localStorage.setItem("ac", storageItem2);
+
+
             return res.redirect("/sdashboard");
           } 
           else {
+
+//temp
+            
+      const param = user.role;
+      const param2 = user.name;
+      var LocalStorage = require("node-localstorage").LocalStorage;
+      localStorage = new LocalStorage("./scratch");
+      const storageItem = JSON.stringify(param)
+      const storageItem2 = JSON.stringify(param2)
+
+      localStorage.setItem("ab", storageItem);
+      localStorage.setItem("ac", storageItem2);
             return res.redirect("/mdashboard");
           }
         });
@@ -63,13 +97,14 @@ function authController() {
       // Validate request
       console.log(req.body);
       if (!name || !city || !contact || !role || !email || !password) {
-        //req.flash('error', 'All fields are required')
+        req.flash('error', 'All fields are required')
         return res.redirect("/register");
       }
 
       // Check if email exists
       User.exists({ email: email }, (err, result) => {
         if (result) {
+          req.flash('error', 'Email already exists. Please try a different one!')
           return res.redirect("/register");
         }
       });
@@ -91,7 +126,7 @@ function authController() {
       user
         .save()
         .then((user) => {
-          return res.redirect("/");
+          return res.redirect("/login");
         })
         .catch((err) => {
           return res.redirect("/register");

@@ -8,8 +8,19 @@ function blogController() {
       res.render("blog/blog", { hi: hi });
     },
     createblog(req, res) {
-      res.render("blog/createblog");
+
+      var LocalStorage = require("node-localstorage").LocalStorage;
+      LocalStorage = new LocalStorage("./scratch");
+      const role = LocalStorage.getItem('ab');
+      
+      if (role == '"mentor"') {
+        res.render("blog/createblog");
+      }
+      else{
+        res.redirect("/403");
+      }
     },
+     
 
     postblog(req, res) {
       console.log(req.body);
@@ -61,8 +72,21 @@ function blogController() {
         });
     },
     async requestedblog(req, res) {
-      const hi = await Blog2.find();
-      res.render("blog/requestedblog", { hi: hi });
+
+
+
+ const hi = await Blog2.find();
+ var LocalStorage = require("node-localstorage").LocalStorage;
+      LocalStorage = new LocalStorage("./scratch");
+      const role = LocalStorage.getItem('ab');
+      
+      if (role == '"mentor"') {
+        res.render("blog/requestedblog", { hi: hi });
+      }
+      else{
+        res.redirect("/403");
+      }
+      
     },
   };
 }

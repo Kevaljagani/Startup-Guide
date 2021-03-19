@@ -15,8 +15,9 @@ const session = require("express-session");
 const MongoDbStore = require("connect-mongo")(session);
 const bodyParser = require("body-parser");
 const serveIndex = require('serve-index')
+var cookieParser = require('cookie-parser')
 upload = require("express-fileupload");
-
+app.use(flash());
 
 const {
   userJoin,
@@ -76,7 +77,17 @@ passportInit(passport);
 app.use(upload({ createParentPath: true }))
 console.log("server started")
 app.get("/addcourse",function(req,res){
-    res.sendFile(__dirname+"/addcourse.html")
+   var LocalStorage = require("node-localstorage").LocalStorage;
+      LocalStorage = new LocalStorage("./scratch");
+      const role = LocalStorage.getItem('ab');
+      
+      if (role == '"mentor"') {
+        res.sendFile(__dirname+"/addcourse.html")
+      }
+      else{
+        res.redirect("/403");
+      }
+    
 
 })      
 app.post("/",function(req,res){

@@ -1,7 +1,11 @@
 function chatController() {
   return {
     index(req, res) {
+      
+      var LocalStorage = require("node-localstorage").LocalStorage;
+      localStorage = new LocalStorage("./scratch");
       res.render("chat/chatdb");
+
 
       /*const storage = require('node-sessionstorage')
 

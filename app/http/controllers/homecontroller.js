@@ -22,17 +22,27 @@ const hi = await Profile.find();
 
      const hi = await Profile.find();
 
-      const param = req.query;
-      var LocalStorage = require("node-localstorage").LocalStorage;
-      localStorage = new LocalStorage("./scratch");
+     var LocalStorage = require("node-localstorage").LocalStorage;
+      LocalStorage = new LocalStorage("./scratch");
+      const role = LocalStorage.getItem('ab');
 
-      localStorage.setItem("name", JSON.stringify(param));
+      if (role == '"mentor"') {
 
-      res.render("mdashboard", { hi: hi });
+       res.render("mdashboard", { hi: hi });
+      }
+      else{
+        res.redirect("/403");
+      }
+      
+      
+
 
     },
     error(req, res) {
       res.render("error");
+    },
+    forbidden(req, res) {
+      res.render("403");
     },
   };
 }

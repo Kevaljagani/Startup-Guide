@@ -20,6 +20,9 @@
 			<form action="/register" method="POST" >
 				
 				<h2 class="title"><b>Create account</b></h2>
+        <% if(messages.error) { %>
+            <span class="error"><%= messages.error %></span>
+         <% } %>
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>

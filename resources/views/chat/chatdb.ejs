@@ -45,7 +45,7 @@
               <a href="/" class="text-white px-3 py-2 rounded-md text-sm font-medium">STARTUP GUIDE</a>
               <a href="/event" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Events</a>
               <a href="/blogs" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blogs</a>
-              <a href="#/send Messages" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sent Messages</a>
+              <a href="/courses" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Courses</a>
               <a href="/chatdb" class="bg-gray-900 text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Community Chat</a>
               
             </div>
@@ -59,6 +59,7 @@
     </div>
   </nav>
   
+<% const name = localStorage.getItem('ac'); %>
 
 
 
@@ -79,7 +80,7 @@
                             </label>
                             <input name="username"
                                 class="appearance-none block w-full bg-gray-200 text-blue-900 border-b-2 border-gray-600 rounded py-3 px-4 mb-3 leading-tight hover:bg-gray-300 focus:outline-none focus:border-gray-900 focus:bg-gray-300 transition duration-200"
-                                id="username" type="text" placeholder="Enter username..." required/>
+                                id="username" value="<%= name %>" type="text" placeholder="Enter username..." required/>
                         </div>
                         <div class="m-1 p-1 rounded bg-transperent">
                             <label for="room" class="block text-blue-900 text-2xl font-bold mb-4">

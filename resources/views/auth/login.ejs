@@ -15,11 +15,15 @@
 		<div class="img">
 			<img class=my-20 src="https://raw.githubusercontent.com/harshillukhi/images/ad9d04838093741c8e8c7df722fea6ae28269391/undraw_personalization_triu%20(1).svg">
 		</div>
-        
+         
 		<div class="login-content">
 			<form action="/login" method="POST">
+
 				<img src="https://raw.githubusercontent.com/harshillukhi/images/cbd521f7c73b12e166b5122dcef765269e558dea/undraw_profile_pic_ic5t.svg">
 				<h2 class="title"><b>Login</b></h2>
+            <% if(messages.error) { %>
+            <span class="error"><%= messages.error %></span>
+         <% } %>   
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>

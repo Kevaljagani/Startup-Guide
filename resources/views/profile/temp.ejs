@@ -1,4 +1,5 @@
 
+
 <!-- This example requires Tailwind CSS v2.0+ -->
 <nav class="bg-gray-800">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -39,7 +40,7 @@
               <a href="/" class="text-white px-3 py-2 rounded-md text-sm font-medium">STARTUP GUIDE</a>
               <a href="/event" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Events</a>
               <a href="/blogs" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blogs</a>
-              <a href="#/send Messages" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sent Messages</a>
+              <a href="/courses" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Courses</a>
               <a href="/chatdb" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Community Chat</a>
               
             </div>
@@ -55,20 +56,6 @@
   
 
 
-
-
-<!-- select a file -->
-  <!-- <div class="avatar">
-    <div class="flex w-full h-screen items-center justify-center bg-grey-lighter">
-      <label class="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue hover:text-white">
-        <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-          <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
-        </svg>
-        <span class="mt-2 text-base leading-normal">Select a file</span>
-        <input name="avatar" type='file' class="hidden" />
-      </label>
-    </div>
-  </div> -->
 
 
 
@@ -109,6 +96,23 @@
     </div>
     <!-- End of Navbar -->
 
+
+<% const roomname = localStorage.getItem('ac'); %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="container mx-auto my-5 p-5">
         <div class="md:flex no-wrap md:-mx-2 ">
             <!-- Left Side -->
@@ -116,11 +120,27 @@
                 <!-- Profile Card -->
                 <div class="bg-white p-3 border-t-4 border-green-400">
                    
-                    <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">John Doe</h1>
+                    <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">
+                    <% for(var i=0; i<hi.length; i++) {%>
+                        <% const a = localStorage.getItem('name'); %>
+                        <% const b = JSON.parse(a); %>
+                        <% const name = (b.name); %>
+                            <% if(hi[i].firstname == name ){ %>
+                                <%= hi[i].firstname %>
+                             <% } else { %>
+                             <% } %>
+                    <% } %>
+                    </h1>
                     <h3 class="text-gray-600 font-lg text-semibold leading-6">Owner at Her Company Inc.</h3>
-                    <p class="text-sm text-gray-500 hover:text-gray-600 leading-6">Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit.
-                        Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non deserunt gfhdgh jdgfwhdgh gdg dgegf</p>
+                    <p class="text-sm text-gray-500 hover:text-gray-600 leading-6">     <% for(var i=0; i<hi.length; i++) {%>
+                        <% const a = localStorage.getItem('name'); %>
+                        <% const b = JSON.parse(a); %>
+                        <% const bintro = (b.bintro); %>
+                            <% if(hi[i].bintro == bintro ){ %>
+                                <%= hi[i].bintro %>
+                             <% } else { %>
+                             <% } %>
+                    <% } %></p>
                     <ul
                         class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
                         <li class="flex items-center py-3">
@@ -129,14 +149,30 @@
                                     class="bg-green-500 py-1 px-2 rounded text-white text-sm">Active</span></span>
                         </li>
                         <li class="flex items-center py-3">
-                            <div class="mx-auto">
-                                <a href="/" class="text-gray-300 rounded-full bg-red-600 hover:bg-red-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Leave a Message</a>
-                            </div>
-                            
-                        </li>
-                        <li class="flex items-center py-3">
                             <span>Member since</span>
                             <span class="ml-auto">Nov 07, 2016</span>
+                        </li>
+                        <li class="flex items-center py-3">
+                            <div class="mx-auto">
+                                <a href="/leaveamessage" class="text-gray-300 rounded-full bg-red-600 hover:bg-red-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Leave a Message</a>
+                            </div>
+                            <div class="mx-auto">
+                              <% for(var i=0; i<hi.length; i++) {%>
+                        <% const a = localStorage.getItem('name'); %>
+                        <% const b = JSON.parse(a); %>
+                        <% const name = (b.name); %>
+                            <% if(hi[i].firstname == name ){ %>
+
+                            <% const a = `"${name}"` %>
+                             
+                                <a href="/chat.html?username=<%= roomname %>&room=<%= a %>" class="text-gray-300 rounded-full bg-green-600 hover:bg-green-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Live Chat</a>
+                                
+                             
+                            </div>
+                            <% } %>
+                    <% } %>
+                            
+                            
                         </li>
                     </ul>
                 </div>
@@ -165,17 +201,42 @@
                         <div class="grid md:grid-cols-2 text-sm">
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">First Name</div>
-                                <div class="px-4 py-2">Jane</div>
+                                <div class="px-4 py-2">
+                                  <% for(var i=0; i<hi.length; i++) {%>
+                        <% const a = localStorage.getItem('name'); %>
+                        <% const b = JSON.parse(a); %>
+                        <% const name = (b.name); %>
+                            <% if(hi[i].firstname == name ){ %>
+                                <%= hi[i].firstname %>
+                             <% } else { %>
+                             <% } %>
+                    <% } %></div>
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Last Name</div>
-                                <div class="px-4 py-2">Doe</div>
+                                <div class="px-4 py-2"><% for(var i=0; i<hi.length; i++) {%>
+                        <% const a = localStorage.getItem('name'); %>
+                        <% const b = JSON.parse(a); %>
+                        <% const lastname = (b.lastname); %>
+                            <% if(hi[i].lastname == lastname ){ %>
+                                <%= hi[i].lastname %>
+                             <% } else { %>
+                             <% } %>
+                    <% } %></div>
                             </div>
                             
                             
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Contact No.</div>
-                                <div class="px-4 py-2">+11 998001001</div>
+                                <div class="px-4 py-2"><% for(var i=0; i<hi.length; i++) {%>
+                        <% const a = localStorage.getItem('name'); %>
+                        <% const b = JSON.parse(a); %>
+                        <% const contact = (b.contact); %>
+                            <% if(hi[i].contact == contact ){ %>
+                                <%= hi[i].contact %>
+                             <% } else { %>
+                             <% } %>
+                    <% } %></div>
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Address</div>
@@ -185,7 +246,16 @@
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Email.</div>
                                 <div class="px-4 py-2">
-                                    <a class="text-blue-800" href="mailto:jane@example.com">jane@example.com</a>
+                                    <a class="text-blue-800" href="mailto:jane@example.com">
+                                    <% for(var i=0; i<hi.length; i++) {%>
+                        <% const a = localStorage.getItem('name'); %>
+                        <% const b = JSON.parse(a); %>
+                        <% const email = (b.email); %>
+                            <% if(hi[i].email == email ){ %>
+                                <%= hi[i].email %>
+                             <% } else { %>
+                             <% } %>
+                    <% } %></a>
                                 </div>
                             </div>
                             <div class="grid grid-cols-2">
@@ -194,15 +264,39 @@
                             </div>
                             <div class="grid grid-cols-2">
                               <div class="px-4 py-2 font-semibold">City</div>
-                              <div class="px-4 py-2">SUrat</div>
+                              <div class="px-4 py-2"><% for(var i=0; i<hi.length; i++) {%>
+                        <% const a = localStorage.getItem('name'); %>
+                        <% const b = JSON.parse(a); %>
+                        <% const city = (b.city); %>
+                            <% if(hi[i].city == city ){ %>
+                                <%= hi[i].city %>
+                             <% } else { %>
+                             <% } %>
+                    <% } %></div>
                           </div>
                           <div class="grid grid-cols-2">
                             <div class="px-4 py-2 font-semibold">State</div>
-                            <div class="px-4 py-2">Gujarat</div>
+                            <div class="px-4 py-2"><% for(var i=0; i<hi.length; i++) {%>
+                        <% const a = localStorage.getItem('name'); %>
+                        <% const b = JSON.parse(a); %>
+                        <% const state = (b.state); %>
+                            <% if(hi[i].state == state ){ %>
+                                <%= hi[i].state %>
+                             <% } else { %>
+                             <% } %>
+                    <% } %></div>
                         </div>
                         <div class="grid grid-cols-2">
                           <div class="px-4 py-2 font-semibold">Area of Expertise</div>
-                          <div class="px-4 py-2">Hardwere</div>
+                          <div class="px-4 py-2"><% for(var i=0; i<hi.length; i++) {%>
+                        <% const a = localStorage.getItem('name'); %>
+                        <% const b = JSON.parse(a); %>
+                        <% const areaofexpertise = (b.areaofexpertise); %>
+                            <% if(hi[i].areaofexpertise == areaofexpertise ){ %>
+                                <%= hi[i].areaofexpertise %>
+                             <% } else { %>
+                             <% } %>
+                    <% } %></div>
                       </div>
                       
                         </div>
@@ -210,7 +304,15 @@
                     </div>
                     <div class="grid grid-cols-4">
                       <div class="px-4 py-2 font-semibold">About me</div>
-                      <div class="col-span-3 my-12 mx-4 pr-8 overflow-y-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                      <div class="col-span-3 my-12 mx-4 pr-8 overflow-y-auto text-justify"><% for(var i=0; i<hi.length; i++) {%>
+                        <% const a = localStorage.getItem('name'); %>
+                        <% const b = JSON.parse(a); %>
+                        <% const dintro = (b.dintro); %>
+                            <% if(hi[i].dintro == dintro ){ %>
+                                <%= hi[i].dintro %>
+                             <% } else { %>
+                             <% } %>
+                    <% } %></div>
                   </div>
               
                     
@@ -236,22 +338,16 @@
                             </div>
                             <ul class="list-inside space-y-2">
                                 <li>
-                                    <div class="text-teal-600">Owner at Her Company Inc.</div>
-                                    <div class="text-gray-500 text-xs">March 2020 - Now</div>
-                                </li>
-                                <li>
-                                    <div class="text-teal-600">Owner at Her Company Inc.</div>
-                                    <div class="text-gray-500 text-xs">March 2020 - Now</div>
-                                </li>
-                                <li>
-                                    <div class="text-teal-600">Owner at Her Company Inc.</div>
-                                    <div class="text-gray-500 text-xs">March 2020 - Now</div>
-                                </li>
-                                <li>
-                                    <div class="text-teal-600">Owner at Her Company Inc.</div>
-                                    <div class="text-gray-500 text-xs">March 2020 - Now</div>
-                                </li>
-                            </ul>
+                                    <div class="text-teal-600"><% for(var i=0; i<hi.length; i++) {%>
+                        <% const a = localStorage.getItem('name'); %>
+                        <% const b = JSON.parse(a); %>
+                        <% const experience = (b.experience); %>
+                            <% if(hi[i].experience == experience ){ %>
+                                <%= hi[i].experience %>
+                             <% } else { %>
+                             <% } %>
+                    <% } %></div>
+                         
                         </div>
                         <div>
                             <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
@@ -269,13 +365,18 @@
                             </div>
                             <ul class="list-inside space-y-2">
                                 <li>
-                                    <div class="text-teal-600">Masters Degree in Oxford</div>
+                                    <div class="text-teal-600"><% for(var i=0; i<hi.length; i++) {%>
+                        <% const a = localStorage.getItem('name'); %>
+                        <% const b = JSON.parse(a); %>
+                        <% const education = (b.education); %>
+                            <% if(hi[i].education == education ){ %>
+                                <%= hi[i].education %>
+                             <% } else { %>
+                             <% } %>
+                    <% } %></div>
                                     <div class="text-gray-500 text-xs">March 2020 - Now</div>
                                 </li>
-                                <li>
-                                    <div class="text-teal-600">Bachelors Degreen in LPU</div>
-                                    <div class="text-gray-500 text-xs">March 2020 - Now</div>
-                                </li>
+                              
                             </ul>
                         </div>
                     </div>
