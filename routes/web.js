@@ -6,6 +6,7 @@ const blogController = require('../app/http/controllers/blogController')
 const profileController = require('../app/http/controllers/profileController')
 const messageController = require('../app/http/controllers/messageController')
 const courseController = require('../app/http/controllers/courseController')
+const paymentController = require('../app/http/controllers/paymentController')
 
 
 const guest = require('../app/http/middlewares/guest')
@@ -41,12 +42,10 @@ app.get('/inbox', messageController().inbox)
 app.get('/chatwithmentor', messageController().chatwithmentor)
 app.get('/courses', courseController().index)
 app.get('/sentmessages', messageController().sentmessages)
+app.get('/payment', paymentController().index)
+app.post('/callback', paymentController().callback)
 app.get('/403', homeController().forbidden)
 app.get('/*', homeController().error)
-
-
-
-
 
 
 }

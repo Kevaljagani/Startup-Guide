@@ -47,7 +47,8 @@ res.render('/', { a: a })*/
 
       res.render("profile/mentordetails", { hi: hi });
     },
-   async temp(req, res) {
+      async temp(req, res) {
+     
       const hi = await Profile.find();
 
       const param = req.query;
